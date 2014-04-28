@@ -1,6 +1,8 @@
 require 'pry'
 require_relative '../lib/person.rb'
 require_relative '../lib/player.rb'
+require_relative '../lib/knight.rb'
+require_relative '../lib/wizard.rb'
 
 puts "Starting the game!"
 binding.pry
@@ -26,3 +28,9 @@ while( game_man.alive?)
 end
 
 puts "Game Man has been vanquished"
+
+knight1 = Knight.new("Ethan", "Gould")
+puts "The knights name is #{knight1.full_name} with a strength of #{knight1.strength}"
+
+wizard1 = Wizard.new("Harry", "Potter")
+puts "The wizards name is #{wizard1.full_name} with a strength of #{wizard1.strength}"

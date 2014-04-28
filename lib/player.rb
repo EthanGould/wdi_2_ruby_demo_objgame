@@ -23,4 +23,5 @@ class Player < Person
 
   def take_damage(attack_strength)
     health -= attack_strength
+  end
 end

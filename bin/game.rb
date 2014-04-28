@@ -11,3 +11,5 @@ puts "Created #{jack.full_name}"
 
 game_man = Player.new("Matt", "Brendzel")
 puts "Game man's health is #{game_man.health}"
+
+puts "Game man is " + (game_man.alive? ? "Alive" : "Dead")

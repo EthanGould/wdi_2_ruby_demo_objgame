@@ -3,12 +3,12 @@
 
 class Wizard < Player
 
-  HEALTH = 20
-  STRENGTH = 75
+  DEFAULT_HEALTH = 20
+  DEFAULT_STRENGTH = 75
 
   def initialize(first_name, last_name)
     super
-    @strength = STRENGTH
-    @health = HEALTH
+    @strength = DEFAULT_STRENGTH
+    @health = DEFAULT_HEALTH
   end
 end

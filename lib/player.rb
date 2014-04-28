@@ -21,7 +21,15 @@ class Player < Person
     #  health => 0 ? true : false
   end
 
+
+  #decrease players health
   def take_damage(attack_strength)
-    health -= attack_strength
+    @health -= attack_strength
+  end
+
+
+  #attack another player with this players strength
+  def attack(opponent)
+    opponent.take_damage(strength)
   end
 end

@@ -21,7 +21,7 @@ puts "Game man is " + (game_man.alive? ? "Alive" : "Dead")
 
 code_man = Player.new("Tom", "Dyer")
 while( game_man.alive?)
-  puts "Game man attacks game_man"
+  puts "Code man attacks game_man"
   code_man.attack(game_man)
   puts "Game man health is #{game_man.health}"
   puts "Game man is " + (game_man.alive? ? "Alive" : "Dead")
@@ -30,7 +30,14 @@ end
 puts "Game Man has been vanquished"
 
 knight1 = Knight.new("Ethan", "Gould")
-puts "The knights name is #{knight1.full_name} with a strength of #{knight1.strength}"
+puts "Created knight, #{knight1.full_name} with a strength of #{knight1.strength}"
+puts "and a health of #{knight1.health}"
 
 wizard1 = Wizard.new("Harry", "Potter")
-puts "The wizards name is #{wizard1.full_name} with a strength of #{wizard1.strength}"
+puts "Created wizard, #{wizard1.full_name} with a strength of #{wizard1.strength}"
+puts "and a health of #{wizard1.health}"
+
+puts "#{knight1.full_name} attacks #{wizard1.full_name}"
+knight1.attack(wizard1)
+puts "#{wizard1.full_name}'s' health is #{wizard1.health}"
+puts "#{wizard1.full_name} is " + (wizard1.alive? ? "Alive" : "Dead")

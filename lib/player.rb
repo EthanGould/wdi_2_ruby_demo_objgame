@@ -1,4 +1,4 @@
-
+require_relative 'person'
 
 class Player < Person
 
@@ -30,6 +30,11 @@ class Player < Person
 
   #attack another player with this players strength
   def attack(opponent)
-    opponent.take_damage(strength)
+    if alive?
+      opponent.take_damage(strength)
+    else
+      puts "This play is dead! Cannot attack"
+    end
   end
+
 end

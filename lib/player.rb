@@ -1,16 +1,23 @@
 require_relative 'person'
+require_relative 'talker'
 
 class Player < Person
 
+  # MIXIN all methods in Talker Module to
+  # this class and all sub classes
+  include Talker
+
   DEFAULT_HEALTH = 20
   DEFAULT_STRENGTH = 5
-  attr_reader :health, :strength, :alive
+  attr_reader :health, :strength
 
   def initialize(first_name, last_name)
 
     super(first_name, last_name)
     @health = DEFAULT_HEALTH
     @strength = DEFAULT_STRENGTH
+
+    talk("Created #{full_name}")
   end
 
   def alive?
@@ -32,6 +39,7 @@ class Player < Person
   def attack(opponent)
     if alive?
       opponent.take_damage(strength)
+      talk("#{full_name} is attacking #{opponent.full_name}")
     else
       puts "This play is dead! Cannot attack"
     end

@@ -1,15 +1,19 @@
+require_relative 'person'
+require_relative 'talker'
 
-class Person
-  attr_accessor :last_name
-  attr_reader :first_name
+Module GAGame
 
-  def initialize(first_name, last_name)
-    @first_name = first_name
-    @last_name = last_name
+  class Person
+    attr_accessor :last_name
+    attr_reader :first_name
+
+    def initialize(first_name, last_name)
+      @first_name = first_name
+      @last_name = last_name
+    end
+
+    def full_name
+      "#{first_name} #{last_name}"
+    end
   end
-
-  def full_name
-    "#{first_name} #{last_name}"
-  end
-
 end

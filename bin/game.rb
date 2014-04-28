@@ -7,40 +7,44 @@ require_relative '../lib/wizard.rb'
 puts "Starting the game!"
 binding.pry
 
-jack = Person.new("Jack", "Sparrow")
+jack = GAGame::Person.new("Jack", "Sparrow")
 
 puts "Created #{jack.full_name}"
 
-game_man = Player.new("Matt", "Brendzel")
-puts "Game man's health is #{game_man.health}"
+game_man = GAGame::Player.new("Matt", "Brendzel")
+puts "Created #{game_man.full_name} with health of #{game_man.health}"
+puts "and strength #{game_man.strength}"
 
-puts "Game man's health is #{game_man.health}"
-game_man.take_damage(10)
-puts "Game man health is #{game_man.health} "
-puts "Game man is " + (game_man.alive? ? "Alive" : "Dead")
+# game_man.take_damage(10)
+# puts "Game man health is #{game_man.health} "
+# puts "Game man is " + (game_man.alive? ? "Alive" : "Dead")
 
-code_man = Player.new("Tom", "Dyer")
-while( game_man.alive?)
-  puts "Code man attacks game_man"
-  code_man.attack(game_man)
-  puts "Game man health is #{game_man.health}"
-  puts "Game man is " + (game_man.alive? ? "Alive" : "Dead")
-end
+code_man = GAGame::Player.new("Tom", "Dyer")
+puts "Created #{code_man.full_name} with health of #{code_man.health}"
+puts "and strength #{code_man.strength}"
+# while( game_man.alive?)
+#   puts "Code man attacks game_man"
+#   code_man.attack(game_man)
+#   puts "Game man health is #{game_man.health}"
+#   puts "Game man is " + (game_man.alive? ? "Alive" : "Dead")
+# end
 
-puts "Game Man has been vanquished"
+knight2 = GAGame::Knight.new("James", "Thulberry")
+puts "Created knight, #{knight2.full_name}"
+puts "with a strength of #{knight2.strength} and a health of #{knight2.health}"
 
-knight1 = Knight.new("Ethan", "Gould")
-puts "Created knight, #{knight1.full_name} with a strength of #{knight1.strength}"
-puts "and a health of #{knight1.health}"
+knight1 = GAGame::Knight.new("Ethan", "Gould")
+puts "Created knight, #{knight1.full_name}"
+puts "with a strength of #{knight1.strength} and a health of #{knight1.health}"
 
-wizard1 = Wizard.new("Harry", "Potter")
-puts "Created wizard, #{wizard1.full_name} with a strength of #{wizard1.strength}"
-puts "and a health of #{wizard1.health}"
+wizard1 = GAGame::Wizard.new("Harry", "Potter")
+puts "Created wizard, #{wizard1.full_name}"
+puts "with a strength of #{wizard1.strength} and a health of #{wizard1.health}"
 
-puts "#{knight1.full_name} attacks #{wizard1.full_name}"
-knight1.attack(wizard1)
-puts "#{wizard1.full_name}'s' health is #{wizard1.health}"
-puts "#{wizard1.full_name} is " + (wizard1.alive? ? "Alive" : "Dead")
+wizard2 = GAGame::Wizard.new("Tim", "Gould")
+puts "Created wizard, #{wizard2.full_name}"
+puts "with a strength of #{wizard2.strength} and a health of #{wizard2.health}"
 
-puts "#{wizard1.full_name} is "
-puts "#{wizard1.cast_spell(knight1)}"
+puts "Total number of wizards = #{GAGame::Wizard.total_wizards}"
+puts "Total number of knights = #{GAGame::Knight.total_knights}"
+puts "Total number of players = #{GAGame::Player.total_players}"

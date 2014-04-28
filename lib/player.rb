@@ -8,6 +8,13 @@ module GAGame
     # this class and all sub classes
     include Talker
 
+    #define class variable
+    @@total_players = 0
+
+    def self.total_players
+      @@total_players
+    end
+
     DEFAULT_HEALTH = 20
     DEFAULT_STRENGTH = 5
     attr_reader :health, :strength
@@ -19,6 +26,7 @@ module GAGame
       @strength = DEFAULT_STRENGTH
 
       talk("Created #{full_name}")
+      @@total_players += 1
     end
 
     def alive?

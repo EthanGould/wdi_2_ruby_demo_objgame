@@ -1,7 +1,7 @@
 require_relative 'person'
 require_relative 'talker'
 
-Module GAGame
+module GAGame
 
   class Person
     attr_accessor :last_name

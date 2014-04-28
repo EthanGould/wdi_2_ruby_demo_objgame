@@ -1,7 +1,8 @@
 
-
-module Talker
-  def talk(msg)
-  puts "Talker is saying #{msg}"
+module GAGame
+  module Talker
+    def talk(msg)
+    %x{ say "#{msg}"}
+    end
   end
 end

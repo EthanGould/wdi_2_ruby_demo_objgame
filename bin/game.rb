@@ -41,3 +41,6 @@ puts "#{knight1.full_name} attacks #{wizard1.full_name}"
 knight1.attack(wizard1)
 puts "#{wizard1.full_name}'s' health is #{wizard1.health}"
 puts "#{wizard1.full_name} is " + (wizard1.alive? ? "Alive" : "Dead")
+
+puts "#{wizard1.full_name} is "
+puts "#{wizard1.cast_spell(knight1)}"
